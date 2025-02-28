@@ -5,7 +5,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:8.1.0'
+        classpath 'com.android.tools.build:gradle:8.2.1'
     }
 }
 
@@ -13,6 +13,8 @@ rootProject.allprojects {
     repositories {
         google()
         mavenCentral()
+        //https://youtrack.jetbrains.com/issue/IDEA-274929/Not-being-able-to-import-JAR-AAR-package-in-new-Intellj-Android-Studio
+        mavenLocal()
     }
 }
 
@@ -27,7 +29,7 @@ android {
     compileSdkVersion 33
 
     defaultConfig {
-        minSdkVersion 24
+        minSdkVersion 21
         targetSdkVersion 33
         versionCode 603
         versionName "6.0.3"
@@ -49,5 +51,14 @@ android {
 
 dependencies {
     implementation 'androidx.annotation:annotation:1.5.0'
-    implementation 'com.arthenica:ffmpeg-kit-https:6.0-2'
+    implementation 'com.arthenica:smart-exception-java:0.2.1'
+    implementation 'com.arthenica:ffmpeg-kit:local-6.0-2.LTS'
+//    implementation files('libs/ffmpeg-kit.aar')
+//    implementation project(':ffmpeg-kit-android')
+//    implementation 'com.arthenica:ffmpeg-kit-https:6.0-2'
+//    implementation files('../../../prebuilt/ffmpeg-kit-audio-6.0-2.LTS.aar')
+//    implementation project(":ffmpeg_kit_android_module")
+//    implementation files('../../../prebuilt/bundle-android-aar-lts/ffmpeg-kit/ffmpeg-kit.aar')
+//    implementation files('../../../prebuilt/bundle-android-aar-lts/ffmpeg-kit/ffmpeg-kit.aar')
+//    implementation files('../../../prebuilt/bundle-android-aar-lts/ffmpeg-kit/ffmpeg-kit.aar')
 }
