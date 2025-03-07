@@ -471,6 +471,8 @@ set_toolchain_paths() {
   export NM="$(xcrun --sdk "$(get_sdk_name)" -f nm 2>>"${BASEDIR}"/build.log)"
 
   export INSTALL_PKG_CONFIG_DIR="${BASEDIR}/prebuilt/$(get_build_directory)/pkgconfig"
+  #make sure pkgconfig is using the generated libs, not the ones installed
+  export PKG_CONFIG_PATH="$INSTALL_PKG_CONFIG_DIR"
   export ZLIB_PACKAGE_CONFIG_PATH="${INSTALL_PKG_CONFIG_DIR}/zlib.pc"
   export BZIP2_PACKAGE_CONFIG_PATH="${INSTALL_PKG_CONFIG_DIR}/bzip2.pc"
   export LIB_ICONV_PACKAGE_CONFIG_PATH="${INSTALL_PKG_CONFIG_DIR}/libiconv.pc"

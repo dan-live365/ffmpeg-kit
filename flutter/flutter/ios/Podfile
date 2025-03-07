@@ -1,0 +1,2 @@
+platform :ios, '14.0'
+pod 'ffmpeg-kit-ios-audio', :path => '../../../prebuilt/ffmpeg-kit-ios-audio.podspec.json'
